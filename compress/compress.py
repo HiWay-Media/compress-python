@@ -22,7 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-import requests
+import requests, json
+#
 from builtins   import isinstance
 from typing     import Dict, List
 #
@@ -31,12 +32,33 @@ class CompressClient:
     #
     api_key: str
     customer_name: str
+    client_id : str
     req : requests
     #
     def __init__(self, api_key :str , customer_name : str):
         self.api_key        = api_key
         self.customer_name  = customer_name
         self.req            = requests.Session()
+        self.client_id      = customer_name + "_client"
     #
-
+    #/**
+    # *
+    # * @param {string} apikey
+    # * @param {string} customer
+    # * @returns in data {
+    #      "total": 4608,
+    #      "used": 1965
+    #  }
+    # */
+    get_s3_space() {
+        return self.req.post(TNGRM_BASE_URL + S3_SPACE, 
+          headers={
+            "Content-Type": "application/json",
+          },
+          body= json.dumps({
+            api_key: self.api_key,
+            client_id: self.client_id,
+          }),
+        )
+    }
 #
