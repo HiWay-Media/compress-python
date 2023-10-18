@@ -24,6 +24,7 @@
 #
 from unittest import mock
 import requests
+from ..constants import *
 from httmock import urlmatch, response, HTTMock, all_requests
 #
 try:
@@ -36,6 +37,7 @@ class TestConnection(unittest.TestCase):
     #
     def setUp(self):
         self._conn = requests.Session()
+        self._conn.base_url = TNGRM_BASE_URL
     #
     @all_requests
     def response_content_success(self, url, request):
