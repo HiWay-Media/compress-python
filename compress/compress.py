@@ -31,12 +31,12 @@ class CompressClient:
     #
     api_key: str
     customer_name: str
-    req
+    req : requests
     #
     def __init__(self, api_key :str , customer_name : str):
         self.api_key        = api_key
         self.customer_name  = customer_name
         self.req            = requests.Session()
     #
-    
+
 #
