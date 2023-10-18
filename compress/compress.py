@@ -56,9 +56,9 @@ class CompressClient:
           headers={
             "Content-Type": "application/json",
           },
-          body= json.dumps({
-            api_key: self.api_key,
-            client_id: self.client_id,
+          body = json.dumps({
+            "api_key": self.api_key,
+            "client_id": self.client_id,
           }),
         )
     #
