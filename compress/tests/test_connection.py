@@ -37,7 +37,6 @@ class TestConnection(unittest.TestCase):
     #
     def setUp(self):
         self._conn = requests.Session()
-        self._conn.base_url = TNGRM_BASE_URL
     #
     @all_requests
     def response_content_success(self, url, request):
@@ -47,7 +46,7 @@ class TestConnection(unittest.TestCase):
     #
     def test_raw_get(self):
         with HTTMock(self.response_content_success):
-            resp = self._conn.get("/health")
+            resp = self._conn.get(TNGRM_BASE_URL + "/health")
         self.assertEqual(resp.content, b'response_ok')
         self.assertEqual(resp.status_code, 200)
     #
