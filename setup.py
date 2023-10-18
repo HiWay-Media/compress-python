@@ -16,7 +16,7 @@ setup(
     description='python-keycloak is a Python package providing access to the Compress API.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    packages=['compress'],
+    packages=['compress', 'compress.tests'],
     install_requires=['requests>=2.20.0',],
     tests_require=['httmock>=1.2.5'],
     classifiers=[
