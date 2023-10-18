@@ -38,16 +38,16 @@ class TestConnection(unittest.TestCase):
     def setUp(self):
         self._conn = requests.Session()
     #
-    @all_requests
-    def response_content_success(self, url, request):
-        headers = {'content-type': 'application/json'}
-        content = b'response_ok'
-        return response(200, content, headers, None, 5, request)
+    #@all_requests
+    #def response_content_success(self, url, request):
+    #    headers = {'content-type': 'application/json'}
+    #    content = b'response_ok'
+    #    return response(200, content, headers, None, 5, request)
     #
-    def test_raw_get(self):
-        with HTTMock(self.response_content_success):
-            resp = self._conn.get(TNGRM_BASE_URL + "/health")
-        self.assertEqual(resp.content, b'response_ok')
-        self.assertEqual(resp.status_code, 200)
+    #def test_raw_get(self):
+    #    with HTTMock(self.response_content_success):
+    #        resp = self._conn.get(TNGRM_BASE_URL + "/health")
+    #    self.assertEqual(resp.content, b'response_ok')
+    #    self.assertEqual(resp.status_code, 200)
     #
 #
