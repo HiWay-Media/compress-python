@@ -24,6 +24,7 @@
 #
 import requests, json
 #
+from .constants import *
 from builtins   import isinstance
 from typing     import Dict, List
 #
@@ -50,7 +51,7 @@ class CompressClient:
     #      "used": 1965
     #  }
     # */
-    get_s3_space() {
+    def get_s3_space(self):
         return self.req.post(TNGRM_BASE_URL + S3_SPACE, 
           headers={
             "Content-Type": "application/json",
@@ -60,5 +61,5 @@ class CompressClient:
             client_id: self.client_id,
           }),
         )
-    }
+    #
 #
