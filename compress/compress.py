@@ -53,13 +53,30 @@ class CompressClient:
     # */
     def get_s3_space(self):
         return self.req.post(TNGRM_BASE_URL + S3_SPACE, 
-          headers={
-            "Content-Type": "application/json",
-          },
-          body = json.dumps({
-            "api_key": self.api_key,
-            "client_id": self.client_id,
-          }),
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+            }),
+        )
+    #
+    # /**
+    # *
+    # * @param {string} apikey
+    # * @param {string} customer
+    # * @returns list of categories of the customer
+    # */
+    def get_categories(self):
+        return self.req.post(TNGRM_BASE_URL + GET_CATEGORIES, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps(({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+            })
         )
     #
 #
