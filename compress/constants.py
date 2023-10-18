@@ -25,7 +25,7 @@
 TNGRM_BASE_URL                 = "https://api.tngrm.io/api/v3.0"
 #AUTH_LOGIN                     = "/external/auth/login"
 GET_CATEGORIES                 = "/external/upload/categories"
-CREATE_CATEGORY                = GET_CATEGORIES + "/create2
+CREATE_CATEGORY                = GET_CATEGORIES + "/create"
 #
 GET_RESTREAMERS                = "/external/restreamers"
 GET_RUNNING_INSTANCES          = GET_RESTREAMERS + "/running_instances"
@@ -33,8 +33,8 @@ GET_RUNNING_SINGLE_INSTANCE    = GET_RESTREAMERS + "/single_instance"
 SCALE_RESTREAMER               = GET_RESTREAMERS + "/scale_instance"
 #
 GET_UPLOADS                    = "/external/upload"
-GET_SINGLE_UPLOAD              = GET_UPLOADS" + "/jobid";
-SET_PUBLISHED_UPLOAD           = GET_UPLOADS" + "/set_published"
+GET_SINGLE_UPLOAD              = GET_UPLOADS + "/jobid"
+SET_PUBLISHED_UPLOAD           = GET_UPLOADS + "/set_published"
 CREATE_UPLOAD                  = GET_UPLOADS + "/create"
 PRESIGNED_URL_S3               = GET_UPLOADS + "/presignedUrl"
 S3_SPACE                       = GET_UPLOADS + "/s3_space"
