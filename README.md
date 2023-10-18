@@ -1,4 +1,6 @@
 # compress-python
+[![Python package](https://github.com/HiWay-Media/compress-python/actions/workflows/python-package.yml/badge.svg)](https://github.com/HiWay-Media/compress-python/actions/workflows/python-package.yml)
+
 The Compress python library provides access to the Compress API for encoding videos, restreamers
 
 ## Table of Contents
