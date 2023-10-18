@@ -22,21 +22,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-import requests
-from builtins   import isinstance
-from typing     import Dict, List
-#
-#
-class CompressClient:
-    #
-    api_key: str
-    customer_name: str
-    req
-    #
-    def __init__(self, api_key :str , customer_name : str):
-        self.api_key        = api_key
-        self.customer_name  = customer_name
-        self.req            = requests.Session()
-    #
-    
-#
+from unittest import mock
+
+from httmock import urlmatch, response, HTTMock, all_requests
+
+try:
+    import unittest
+except ImportError:
+    import unittest2 as unittest
+
+
+class TestConnection(unittest.TestCase):
+
+    #def setUp(self):
+    #    self._conn = ConnectionManager(
+    #        base_url="https://localhost/",
+    #        headers={},
+    #        timeout=60)
+
+    @all_requests
+    def response_content_success(self, url, request):
+        headers = {'content-type': 'application/json'}
+        content = b'response_ok'
+        return response(200, content, headers, None, 5, request)
