@@ -23,7 +23,7 @@
 # SOFTWARE.
 #
 from unittest import mock
-
+import requests
 from httmock import urlmatch, response, HTTMock, all_requests
 #
 try:
