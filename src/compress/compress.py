@@ -25,8 +25,8 @@
 import requests, json
 #
 from .constants import *
-from builtins   import isinstance
-from typing     import Dict, List
+#from builtins   import isinstance
+#from typing     import Dict, List
 #
 #
 class CompressClient:
@@ -79,4 +79,44 @@ class CompressClient:
             })
         )
     #
+    #/**
+    # *
+    # * @param {string} apikey
+    # * @param {string} customer
+    # * @returns list of categories of the customer
+    # */
+    def create_category(self, category_name : str): 
+        return self.req.post(TNGRM_BASE_URL + GET_CATEGORIES, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "category_name": category_name
+            })
+        )
+    #
+    #/**
+    # * upload video to minio s3 bucket with a presigned PUT url
+    # *
+    # * videos will not be displayed in compress platform,
+    # *
+    # * this is just a plain upload to s3 storage
+    # * @param {string} destination_folder
+    # * @param {string} filename
+    # * @param {file} file
+    # */
+    def upload_s3(self, destination_folder : str, filename : str, filename ):
+        file_dest = destination_folder + "/" + filename
+        r = self.req.post(TNGRM_BASE_URL + PRESIGNED_URL_S3, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "customer": self.customer_name,
+                "filename": file_dest
+            })
+        )
+
 #
