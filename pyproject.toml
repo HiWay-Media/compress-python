@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "compress-python"
 version = "0.1.0"
-description = ""
+description = "The Compress python library provides access to the Compress API for encoding videos, restreamers"
 authors = ["allan <allan.nava@hiway.media>"]
 license = "MIT"
 keywords = [ "compress", ]
