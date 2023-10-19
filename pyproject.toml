@@ -7,6 +7,21 @@ license = "MIT"
 keywords = [ "compress", ]
 readme = "README.md"
 
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Operating System :: MacOS",
+    "Operating System :: Unix",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Utilities",
+]
+packages = [
+    { include = "compress", from = "src/" },
+    { include = "compress/**/*.py", from = "src/" },
+]
+include = ["LICENSE", "CHANGELOG.md", "CONTRIBUTING.md"]
+
 [tool.poetry.dependencies]
 python = "^3.10"
 requests = ">=2.20.0"
