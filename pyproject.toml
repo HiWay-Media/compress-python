@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "compress-python"
+version = "0.1.0"
+description = ""
+authors = ["allan <allan.nava@hiway.media>"]
+license = "MIT"
+keywords = [ "compress", ]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = ">=2.20.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
