@@ -107,7 +107,7 @@ class CompressClient:
     # * @param {string} filename
     # * @param {file} file
     # */
-    def upload_s3(self, destination_folder : str, filename : str, filename ):
+    def upload_s3(self, destination_folder : str, filename : str, file ):
         file_dest = destination_folder + "/" + filename
         r = self.req.post(TNGRM_BASE_URL + PRESIGNED_URL_S3, 
             headers={
