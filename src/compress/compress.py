@@ -177,8 +177,8 @@ class CompressClient:
     # * @param {number} amount 
     # * @returns restreamer list
     # */
-    def get_restreamers(start_from :int, amount :int):
-        return self.req.post(TNGRM_BASE_URL + CREATE_UPLOAD, 
+    def get_restreamers(self, start_from :int, amount :int):
+        return self.req.post(TNGRM_BASE_URL + GET_RESTREAMERS, 
             headers={
                 "Content-Type": "application/json",
             },
@@ -189,4 +189,57 @@ class CompressClient:
                 "amount": int(amount)
             })
         )
+    #
+    #/**
+    # * 
+    # * @returns restreamer object
+    # */
+    def get_restreamer(self, instance_name : str):
+        return self.req.post(TNGRM_BASE_URL + GET_RUNNING_SINGLE_INSTANCE, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": instance_name,
+            })
+        )
+    #
+    #/**
+    # * 
+    # * @returns restreamer list running
+    # */
+    def get_running_instances(self):
+        return self.req.post(TNGRM_BASE_URL + GET_RUNNING_INSTANCES, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+            })
+        )
+        #
+    #
+    # /**
+    # * scale the restreamer to turn it on / off
+    # * accept value 0 or 1
+    # * @param {string} restreamer_name 
+    # * @param {number} scale_value 
+    # * @returns 
+    # */
+    def scale_restreamer(self, restreamer_name : str, scale_value: int): 
+        return self.req.post(TNGRM_BASE_URL + SCALE_RESTREAMER, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+                "scale": int(scale_value)
+            })
+        )
+    #
 #
