@@ -118,5 +118,57 @@ class CompressClient:
                 "filename": file_dest
             })
         )
-
+    #
+    # /**
+    # * @param {file} file_thumb 
+    # * @returns 
+    # */
+    def add_video_thumb(self, file_thumb):
+        return self.req.post(TNGRM_BASE_URL + ADD_VIDEO_THUMB, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "client_id": self.client_id,
+                "filename": file_thumb
+            })
+        )
+    #
+    #/**
+    # * upload video with compress encoding
+    # *
+    # * if destination folder is empty, it will upload to the root of the bucket
+    # *
+    # * remember to specify the folder (usually upload)
+    # *
+    # * @param {string} destination_folder 
+    # * @param {file} file 
+    # * @param {string} title 
+    # * @param {string} tags 
+    # * @param {string} location_place 
+    # * @param {number} category_id 
+    # */
+    def upload_with_encoding( self, destination_folder : str, file, title : str, tags : str, location_place : str, category_id : str):
+        #
+        file_dest = destination_folder + "/" + fileName;
+        #< wait until the file is uploaded
+        print("uploading fileName to minio S3...")
+        upload =  self.upload_s3(destination_folder, file, fileName);
+        #
+        return self.req.post(TNGRM_BASE_URL + CREATE_UPLOAD, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": this.api_key,
+                "title": title,
+                "tags": tags,
+                #"category": parseInt(category_id),
+                "location": location_place,
+                "filename": file_dest,
+                #"size": parseInt(file.size),
+                "reporter_email": self.customer_name +"@tngrm.io",
+            })
+        )
+    #
 #
