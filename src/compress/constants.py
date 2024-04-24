@@ -2,7 +2,7 @@
 #
 # MIT License
 # 
-# Copyright (c) 2023 Hiway Media
+# Copyright (c) 2023-2024 Hiway Media
 # 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-TNGRM_BASE_URL                 = "https://api.tngrm.io/api/v3.0"
-#AUTH_LOGIN                     = "/external/auth/login"
+TNGRM_BASE_URL                 = "https://api-compress.hiway.media/api/v4.0"
 GET_CATEGORIES                 = "/external/upload/categories"
 CREATE_CATEGORY                = GET_CATEGORIES + "/create"
 #
