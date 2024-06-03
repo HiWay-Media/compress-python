@@ -242,4 +242,145 @@ class CompressClient:
             })
         )
     #
+    # /**
+    # * hls start
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# StreamProtocol string `json:"stream_protocol" `
+    # * @returns 
+    # */
+    def hls_start(self, restreamer_name : str, stream_protocol: str ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_HLS_START, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+                "stream_protocol": stream_protocol
+            })
+        )
+    #
+    # /**
+    # * hls stop
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# StreamProtocol string `json:"stream_protocol" `
+    # * @returns 
+    # */
+    def hls_stop(self, restreamer_name : str, stream_protocol: str ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_HLS_STOP, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+                "stream_protocol": stream_protocol
+            })
+        )
+    #
+    #
+    # /** TODO:
+    # * restreamer push start
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# ExternalServers []struct {
+	#	ExternalServer string `json:"external_server" `
+	#	IngestProtocol string `json:"ingest_protocol" `
+	#	AudioChannel   string `json:"audio_channel" `
+	#} `json:"external_servers"`
+    # * @returns 
+    # */
+    def push_start(self, restreamer_name : str, external_servers: object ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_PUSH_START, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+            })
+        )
+    #
+    # /** TODO:
+    # * restreamer push stop
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# ExternalServers []struct {
+	#	ExternalServer string `json:"external_server" `
+	#	IngestProtocol string `json:"ingest_protocol" `
+	#	AudioChannel   string `json:"audio_channel" `
+	#} `json:"external_servers"`
+    # * @returns 
+    # */
+    def push_stop(self, restreamer_name : str, external_servers: object ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_PUSH_STOP, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+            })
+        )
+    #
+    # /** TODO:
+    # * RESTREAMER_PULL_START push stop
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# ExternalServers []struct {
+	#	ProcessID string `json:"process_id" `
+	#} `json:"external_servers"`
+    # * @returns 
+    # */
+    def pull_start(self, restreamer_name : str, external_servers: object ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_PULL_START, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+            })
+        )
+    #
+    # /** TODO:
+    # * RESTREAMER_PULL_START push stop
+    # * 
+	# ApiKey   string `json:"api_key" `
+	# ClientId string `json:"client_id" `
+	# InstanceName   string `json:"instance_name" `
+	# ExternalServers []struct {
+	#	ProcessID string `json:"process_id" `
+	#} `json:"external_servers"`
+    # * @returns 
+    # */
+    def pull_start(self, restreamer_name : str, external_servers: object ): 
+        return self.req.post(TNGRM_BASE_URL + RESTREAMER_PULL_STOP, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+                "instance_name": restreamer_name,
+            })
+        )
+    #
 #
