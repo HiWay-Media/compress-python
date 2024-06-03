@@ -337,7 +337,7 @@ class CompressClient:
             })
         )
     #
-    # /** TODO:
+    # /** TODO: need to understand if is used or no 
     # * RESTREAMER_PULL_START push stop
     # * 
 	# ApiKey   string `json:"api_key" `
@@ -360,7 +360,7 @@ class CompressClient:
             })
         )
     #
-    # /** TODO:
+    # /** TODO: need to understand if is used or no 
     # * RESTREAMER_PULL_START push stop
     # * 
 	# ApiKey   string `json:"api_key" `
