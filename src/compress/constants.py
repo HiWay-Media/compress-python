@@ -25,7 +25,7 @@
 TNGRM_BASE_URL                 = "https://api-compress.hiway.media/api/v4.0"
 GET_CATEGORIES                 = "/external/upload/categories"
 CREATE_CATEGORY                = GET_CATEGORIES + "/create"
-#
+# restreamer
 GET_RESTREAMERS                = "/external/restreamers"
 GET_RUNNING_INSTANCES          = GET_RESTREAMERS + "/running_instances"
 GET_RUNNING_SINGLE_INSTANCE    = GET_RESTREAMERS + "/single_instance"
@@ -36,7 +36,7 @@ RESTREAMER_PUSH_START          = GET_RESTREAMERS + "/push/start"
 RESTREAMER_PUSH_STOP           = GET_RESTREAMERS + "/push/stop"
 RESTREAMER_PULL_START          = GET_RESTREAMERS + "/pull/start"
 RESTREAMER_PULL_STOP           = GET_RESTREAMERS + "/pull/stop"
-#
+# uploads 
 GET_UPLOADS                    = "/external/upload"
 GET_SINGLE_UPLOAD              = GET_UPLOADS + "/jobid"
 SET_PUBLISHED_UPLOAD           = GET_UPLOADS + "/set_published"

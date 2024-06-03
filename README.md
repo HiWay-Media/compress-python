@@ -9,8 +9,6 @@ The Compress python library provides access to the Compress API for encoding vid
 - [Installation](#installation)
 - [Usage](#usage)
 
-
-
 ## Installation
 
 You can install Compress-Python using pip:
