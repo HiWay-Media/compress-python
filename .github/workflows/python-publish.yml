@@ -21,6 +21,9 @@ jobs:
       packages: write
       checks: write
     runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/compress-python
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -34,6 +37,6 @@ jobs:
       - name: Build package
         run: python -m build
       - name: Publish package
-        uses: pypa/gh-action-pypi-publish@v1.8.10
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
