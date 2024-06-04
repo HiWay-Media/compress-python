@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='compress-python',
-    version='0.2.0',
+    version='0.3.0',
     url='https://github.com/HiWay-Media/compress-python',
     license='The MIT License',
     author='Allan Nava',
