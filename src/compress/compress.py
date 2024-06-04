@@ -383,4 +383,21 @@ class CompressClient:
             })
         )
     #
+
+
+    #/**
+    # * Need to call before upload s3
+    # * 
+    # * @returns customer_s3
+    # */
+    def get_zone(self, ):
+        return self.req.post(TNGRM_BASE_URL + GET_CUSTOMER_ZONE, 
+            headers={
+                "Content-Type": "application/json",
+            },
+            body = json.dumps({
+                "api_key": self.api_key,
+                "client_id": self.client_id,
+            })
+        )
 #

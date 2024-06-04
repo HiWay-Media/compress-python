@@ -45,4 +45,9 @@ PRESIGNED_URL_S3               = GET_UPLOADS + "/presignedUrl"
 S3_SPACE                       = GET_UPLOADS + "/s3_space"
 ADD_VIDEO_THUMB                = GET_UPLOADS + "/add_thumb"
 SIGN_S3_URL                    = GET_UPLOADS + "/sign_s3_url"
+# customers
+GET_CUSTOMERS                  = "/external/customers/"
+GET_CUSTOMER_ZONE              = GET_CUSTOMERS +"/s3"
+# credentials
+GET_CREDENTIALS                = "/external/credentials/"
 #
