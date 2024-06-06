@@ -26,7 +26,7 @@ import requests, json
 #
 from .constants import *
 #from builtins   import isinstance
-#from typing     import Dict, List
+from typing     import Dict, List
 #
 #
 class CompressClient:
@@ -300,7 +300,7 @@ class CompressClient:
 	#} `json:"external_servers"`
     # * @returns 
     # */
-    def push_start(self, restreamer_name : str, external_servers: object ): 
+    def push_start(self, restreamer_name : str, external_servers: List ): 
         return self.req.post(TNGRM_BASE_URL + RESTREAMER_PUSH_START, 
             headers={
                 "Content-Type": "application/json",
@@ -309,6 +309,7 @@ class CompressClient:
                 "api_key": self.api_key,
                 "client_id": self.client_id,
                 "instance_name": restreamer_name,
+                "external_servers": external_servers
             })
         )
     #
@@ -325,7 +326,7 @@ class CompressClient:
 	#} `json:"external_servers"`
     # * @returns 
     # */
-    def push_stop(self, restreamer_name : str, external_servers: object ): 
+    def push_stop(self, restreamer_name : str, external_servers: List ): 
         return self.req.post(TNGRM_BASE_URL + RESTREAMER_PUSH_STOP, 
             headers={
                 "Content-Type": "application/json",
@@ -334,6 +335,7 @@ class CompressClient:
                 "api_key": self.api_key,
                 "client_id": self.client_id,
                 "instance_name": restreamer_name,
+                "external_servrs": external_servers
             })
         )
     #
@@ -348,7 +350,7 @@ class CompressClient:
 	#} `json:"external_servers"`
     # * @returns 
     # */
-    def pull_start(self, restreamer_name : str, external_servers: object ): 
+    def pull_start(self, restreamer_name : str, external_servers: List ): 
         return self.req.post(TNGRM_BASE_URL + RESTREAMER_PULL_START, 
             headers={
                 "Content-Type": "application/json",
@@ -357,6 +359,7 @@ class CompressClient:
                 "api_key": self.api_key,
                 "client_id": self.client_id,
                 "instance_name": restreamer_name,
+                "external_servers": external_servers,
             })
         )
     #
@@ -371,7 +374,7 @@ class CompressClient:
 	#} `json:"external_servers"`
     # * @returns 
     # */
-    def pull_start(self, restreamer_name : str, external_servers: object ): 
+    def pull_start(self, restreamer_name : str, external_servers: List ): 
         return self.req.post(TNGRM_BASE_URL + RESTREAMER_PULL_STOP, 
             headers={
                 "Content-Type": "application/json",
