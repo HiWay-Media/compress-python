@@ -27,6 +27,7 @@ GET_CATEGORIES                 = "/external/upload/categories"
 CREATE_CATEGORY                = GET_CATEGORIES + "/create"
 # restreamer
 GET_RESTREAMERS                = "/external/restreamers"
+GET_RESTREAMERS_OTT_ALL        = GET_RESTREAMERS + "/ott_all"
 GET_RUNNING_INSTANCES          = GET_RESTREAMERS + "/running_instances"
 GET_RUNNING_SINGLE_INSTANCE    = GET_RESTREAMERS + "/single_instance"
 SCALE_RESTREAMER               = GET_RESTREAMERS + "/scale_instance"
