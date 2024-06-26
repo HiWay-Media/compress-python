@@ -196,7 +196,7 @@ class CompressClient:
     # * @param {number} amount 
     # * @returns restreamer list
     # */
-    def get_restreamers_ott_all(self, start_from :int, amount :int):
+    def get_restreamers_ott_all(self, start_from : int, amount : int ):
         return self.req.post(TNGRM_BASE_URL + GET_RESTREAMERS_OTT_ALL, 
             headers={
                 "Content-Type": "application/json",
